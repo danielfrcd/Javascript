@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paises</title>
+</head>
+<body>
+    <h1>Em que pais você nasceu?</h1>
+    <input type="text" name="txtatual" id="txtatual">
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="res">
+    <script>
+        function verificar() {
+            
+            var txta = window.document.getElementById('txtatual')
+
+            var res = window.document.querySelector('div#res')
+
+            var atual = Text(txta.value)
+
+            res.innerHTML = `<p> O pais em que você nasceu é : ${atual}`
+
+            if (patual == brasil) {
+                res.innerHTML = `<p>Você nasceu no ${patual}, Você é Brasileiro!</p>`
+        }
+            res.innerHTML = `<p>Você nasceu no ${patual}, Você é Estrangeiro!<p/>`
+        }
+    </script>
+        
+</body>
+</html>

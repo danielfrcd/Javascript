@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+</head>
+<body>
+    <h1>Sistema de multas</h1>
+    Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> Km/h
+    <input type="button" value="verificar" onclick="calcular()/* Os inputs são caixas de perguntas e botões que o usuário vai inserir os valores, o 1° o numero e o 2° é um botao para verificar*/" /> 
+    <div id="res">
+    <script>
+        function calcular() { /*Aqui os var são as variaveis criadas para inserir os valores digitados pelo usuário*/
+            
+            var txtv = window.document.getElementById('txtvel') /*O txtv tem a ver com o 1° valor do input e o valor digitado lá vai ser armazenado aqui, o getelementid é usado para selecionar  o id do txtvel*/
+            var res = window.document.querySelector('div#res') /*Aqui é o var do res que no caso é o resultado que será mostrado no fim.*/
+            var vel = Number(txtv.value) /*O var de vel precisamos definir como number pq é o valor que será digitado, por isso definimos o local onde será inserido o valor (txtv) e definimos o value pq vai ser um valor que vai ser digitado.*/
+            res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel}km/h</strong></p>` /*Aqui é apenas a resposta que queremos q seja mostrado na div.*/
+            if (vel > 60) {
+                res.innerHTML += `<p>Você está <strong>MULTADO</strong> por excesso de velocidade!` /*Temos um if para caso o valor digitado seja maior que 60, a mensagem do res será diferente*/
+            }
+            res.innerHTML += `<p>Dirija sempre com cinto de segurança!</p>` /*Aqui a mensagem q será mostrada caso o valor seja igual ou menor a 60*/
+        }
+    </script>
+</body>
+</html>
